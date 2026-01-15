@@ -6,22 +6,73 @@
 html,body{
     height: 100%;
     width: 100%;
-    background-color: black;
+}
+body{
+    background-color: rgb(5, 5, 5);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-h1{
-    color: red;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+@property --rotate{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
 }
-button{
-    margin-top: 10px;
-    padding: 4px 6px;
-    border-radius: 10px;
-    background-color: rgb(19, 149, 200);
+@keyframes borderAnimate{
+    from{
+        --rotate:0deg;
+    }
+    to{
+        --rotate:360deg;
+    }
+}
+.box{
+    /* height: 300px;
+    width: 300px; */
+    max-width: 300px;
+    padding-inline: 10px;
+    padding-bottom: 10px;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* box-shadow: 0 0 240px rgb(45, 1, 16); */
+    border-radius: 15px;
+    /* background: conic-gradient(black,rgba(255, 0, 123)); */
+    background: linear-gradient(black) padding-box,
+    conic-gradient(from var(--rotate),black, rgb(199, 7, 94),black) border-box;
+    border: 0px solid rgba(255, 255, 255,0);
+    animation: borderAnimate 4s ;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: paused;
+    transition: all 0.2s linear;
+    /* 0.3s mein border ki width 0 se 5px ho jaye */
+    box-shadow: 0 0 0px rgba(178, 14, 145, 0.647);
+    text-shadow: 0 0 0px rgba(178, 14, 145, 0.647) ;
     color: white;
-    font-size: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.box:hover{
+    animation-play-state: running;
+    border-width: 5px;
+     box-shadow: 0 0 50px rgba(165, 21, 136, 0.923);
+     color: rgba(208, 24, 159, 0.752);
+     text-shadow: 0 0 10px rgba(178, 14, 145, 0.647) ;
+}
+.box img{
+    width: 100%;
+}
+.box h1{
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 36px;
+
+}
+.box p{
+    line-height: 1;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
