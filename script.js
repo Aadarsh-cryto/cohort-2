@@ -1,18 +1,86 @@
-var img = document.querySelector('img')
-var love = document.querySelector('#love')
-img.addEventListener('dblclick',function(){
-  love.style.opacity = '1'
-  love.style.transform = 'translate(-50%,-50%) scale(1.6) rotate( 0deg)'
-  setTimeout(() => {
-      love.style.transform = 'translate(-50%,-500%) scale(1.6) rotate( 60deg)'
-  }, 800);
-   setTimeout(() => {
-      love.style.opacity = 0
-         
-          
-  }, 1000);
-  setTimeout(() => {
-      
-         love.style.transform = 'translate(-50%,-50%) scale(1.6) rotate( -60deg)'
-  }, 1200);
+
+function getData(cb){
+    setTimeout(() => {
+        let succes = true;
+if(succes){
+    cb(null,"data recived");
+}
+else{
+    cb(null,"error ocuuured");
+}
+    }, 2000);
+}
+
+getData((error,result)=>{
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(result);
+    }
+});
+
+function dukaamSeDudhLaao(cb){
+    setTimeout(() => {
+        let leaaya = true;
+        if (leaaya) {
+            cb(null,"badhiya beta shbahsh");
+        }
+        else{
+            cb(null,"kya yaar pandeyji");
+        }
+    }, 4000);
+
+
+}
+dukaamSeDudhLaao((error,result)=>{
+    if(error){
+        console.log(error);
+    }
+    else{
+        console.log(result);
+    }
 })
+
+
+function getData() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            let success = true;
+
+            if (success) {
+                resolve("Data received");
+            } else {
+                reject("Error occurred");
+            }
+        }, 2000);
+    });
+}
+getData()
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+    function dukaamSeDudhLaao(){
+        return new Promise((resolve,reject)=>{
+            setTimeout(() => {
+                let dudh = true;
+                if(dudh){
+                    console.log("data recived");
+                }
+                else{
+                    console.log("nahi");
+                }
+            }, 2000);
+        })
+    }
+    dukaamSeDudhLaao().then((result)=>{
+        console.log(result);
+    })
+    .catch((error)=>{
+        console.log("nahi")
+    })
+
