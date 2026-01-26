@@ -1,18 +1,22 @@
+//  var btn = document.querySelector('button')
+//  var box = document.querySelector('#box')
 
-function debounce(fn,delay){
-    let timer;
-    return function(){
-        clearTimeout(timer);
-        timer = setTimeout(fn,delay)
-    };
-}
+//  btn.addEventListener('click',function(){
+//     // console.log('hello')
+//     var c1 =  Math.floor(Math.random()*256)
+//      var c2 =  Math.floor(Math.random()*256)
+//      var c3 =  Math.floor(Math.random()*256)
+     
+//     box.style.backgroundColor = `rgb(${c1},${c2},${c3})`
+    
+//     box.innerHTML = `rgb(${c1},${c2},${c3})`
+
+    
+
+//  })
 
 
 
-
-
-document.querySelector('#search').addEventListener("input",
-    debounce(function(){
-        console.log("chala");
-    },400)
-)
+var arr = ['ab','ac','ak','al']
+var a = Math.floor(Math.random()*arr.length)
+console.log(arr[a]);
