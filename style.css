@@ -7,28 +7,12 @@ html, body{
     height: 100%;
     width: 100%;
 }
-body{
-   background-color: black;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   gap: 20px;
-   flex-direction: column;
-}
-#box{
-   height: 200px;
-   width: 200px;
-   background-color: rgb(255, 0,0);
-   border: 5px solid white;
+
+h2{
+   font-size: 50px;
 }
 button{
-   padding: 10px 20px;
-   border-radius: none;
    background-color: crimson;
-   border-radius: 5px;
-   cursor: pointer;
-
-}
-button:active{
-   scale: 0.95;
+   padding: 10px 20px;
+   margin-top: 20px;
 }
