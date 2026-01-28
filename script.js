@@ -1,12 +1,16 @@
-var h1 = document.querySelector('h1')
-var inc = document.querySelector('button')
-var a= 0
-inc.addEventListener('click',function(){
-    a++
-        h1.innerHTML = a
-})
+let nm = document.querySelector("#name");
+let form = document.querySelector("form");
+form.addEventListener("submit",function(dets){
+    dets.preventDefault();
+    if (nm.value.length <=2){
+        document.querySelector("#hide").style.display = "initial";
+    }
+    else{
+         document.querySelector("#hide").style.display = "none";
+    }
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
+console.log(emailRegex.test("test@gmail.com")); // true
+console.log(emailRegex.test("test@gmail"));     // false
 
-
-
-
+});
